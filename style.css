@@ -274,6 +274,7 @@ address {
   animation: rotateReverse normal infinite 20s linear;
   -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
+  display: block;
 }
 
 .link:hover .link__text {
@@ -286,13 +287,13 @@ address {
 }
 
 @-webkit-keyframes rotateReverse {
-  to {
+  100% {
     -webkit-transform: rotate(-360deg);
     transform: rotate(-360deg);
   }
 }
 @keyframes rotateReverse {
-  to {
+  100% {
     -webkit-transform: rotate(-360deg);
     transform: rotate(-360deg);
   }
