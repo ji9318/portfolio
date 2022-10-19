@@ -88,6 +88,8 @@ address {
 .home {
   height: 100vh;
   background-image: url(./assets/background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   /* background-color: #211e49; */
   color: #fff;
   padding: 0 70px 0 80px;
@@ -368,7 +370,9 @@ address {
 }
 
 .profile {
-  margin-bottom: 12px;
+  font-size: 18px;
+  margin-bottom: 24px;
+  transform: translateX(-10px);
 }
 
 .introduce {
@@ -423,7 +427,12 @@ address {
 /* Works */
 .works {
   padding: 80px;
-  background-color: #fcfcfc;
+  background-image: url(./assets/background.jpg);
+  background-size: 100% 100%;
+}
+
+.works .section-title {
+  -webkit-text-stroke: 1px #fff;
 }
 
 .works-list {
@@ -446,20 +455,26 @@ address {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 860px;
-  height: 290px;
+  width: 960px;
+  height: 360px;
   padding-left: 80px;
-  background-color: #e3e3e3;
+  background-color: rgba(252, 252, 252, 0.8);
   border-radius: 20px;
+  transition: box-shadow 200ms ease-in, transform 200ms ease-in;
 }
 
 .works-item:not(:last-child) {
   margin-bottom: 50px;
 }
 
+.works-item:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 3px 3px 10px 3px rgba(213, 217, 255, 0.5);
+}
+
 .works-item-image {
-  width: 340px;
-  height: 200px;
+  width: 390px;
+  height: 230px;
   margin-right: 60px;
   border-radius: 5px;
   overflow: hidden;
@@ -472,21 +487,27 @@ address {
 .works-title {
   font-weight: 500;
   margin-bottom: 12px;
-  font-size: 24px;
+  font-size: 26px;
   letter-spacing: -0.01em;
 }
 
 .works-content {
   line-height: 1.5;
-  margin-bottom: 24px;
-  font-size: 18px;
+  margin-bottom: 18px;
+  font-size: 16px;
   letter-spacing: -0.01em;
+}
+
+.works-desc {
+  width: 330px;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
 }
 
 .works-button {
   display: inline-block;
   position: relative;
-  padding: 10px 28px;
+  padding: 10px 30px;
   color: #fff;
   background-color: #27254f;
   border-radius: 10px;
@@ -705,7 +726,7 @@ address {
 
   .works-item-image {
     width: 320px;
-    height: 180px;
+    height: 185px;
     margin-right: 40px;
   }
 
@@ -715,6 +736,11 @@ address {
 
   .works-content {
     font-size: 16px;
+  }
+
+  .works-desc {
+    width: 300px;
+    font-size: 15px;
   }
 }
 
@@ -829,9 +855,10 @@ address {
 
   .works-item-image {
     width: 100%;
+    max-width: 360px;
     margin-right: 0;
     margin-bottom: 16px;
-    height: 140px;
+    height: 160px;
   }
 
   .works-title {
@@ -839,6 +866,11 @@ address {
   }
 
   .works-content {
+    font-size: 14px;
+  }
+
+  .works-desc {
+    width: 100%;
     font-size: 14px;
   }
 
@@ -900,5 +932,9 @@ address {
 
   .skills-item p {
     font-size: 14px;
+  }
+
+  .works-item-image {
+    height: 140px;
   }
 }
