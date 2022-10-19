@@ -208,6 +208,7 @@ address {
   );
   background: linear-gradient(to right, #acaad8 0, #fff 10%, #acaad8 20%);
   background-position: 0;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-animation: shine 4s infinite linear;
