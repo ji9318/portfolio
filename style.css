@@ -2,6 +2,7 @@
 
 * {
   margin: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Lato", "Spoqa Han Sans Neo", "sans-serif";
   -webkit-font-smoothing: antialiased;
@@ -37,6 +38,7 @@ button,
 input,
 select,
 textarea:focus {
+  -webkit-box-shadow: none;
   box-shadow: none;
   outline: none;
 }
@@ -97,10 +99,17 @@ address {
   left: 0;
   width: 100%;
   height: 140px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 0 70px 0 80px;
+  -webkit-transition: height 400ms ease-in;
   transition: height 400ms ease-in;
   z-index: 300;
 }
@@ -111,10 +120,14 @@ address {
 }
 
 .gnb-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .gnb {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-right: 120px;
 }
@@ -141,7 +154,11 @@ address {
   background-color: #fff;
   width: 30px;
   height: 2px;
+  -webkit-transition: opacity 400ms ease-in, -webkit-transform 400ms ease-in;
+  transition: opacity 400ms ease-in, -webkit-transform 400ms ease-in;
   transition: opacity 400ms ease-in, transform 400ms ease-in;
+  transition: opacity 400ms ease-in, transform 400ms ease-in,
+    -webkit-transform 400ms ease-in;
 }
 
 .menu-button-bar:nth-child(1) {
@@ -149,6 +166,7 @@ address {
 }
 .menu-button-bar:nth-child(2) {
   top: 50%;
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 .menu-button-bar:nth-child(3) {
@@ -161,31 +179,57 @@ address {
 
 .menu-button-bar.rotate-pos {
   top: 50%;
+  -webkit-transform: translateY(-50%) rotate(45deg);
   transform: translateY(-50%) rotate(45deg);
 }
 
 .menu-button-bar.rotate-neg {
   bottom: 50%;
+  -webkit-transform: translateY(50%) rotate(-45deg);
   transform: translateY(50%) rotate(-45deg);
 }
 
 .home-title {
   position: absolute;
   top: 50%;
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   font-family: "futura-pt";
   font-size: 92px;
   letter-spacing: 0.2rem;
   padding: 12px 48px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, #acaad8),
+    color-stop(10%, #fff),
+    color-stop(20%, #acaad8)
+  );
   background: linear-gradient(to right, #acaad8 0, #fff 10%, #acaad8 20%);
   background-position: 0;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -webkit-animation: shine 4s infinite linear;
   animation: shine 4s infinite linear;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   -webkit-text-size-adjust: none;
   white-space: nowrap;
   text-transform: uppercase;
+}
+
+@-webkit-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 730px;
+  }
+
+  100% {
+    background-position: 730px;
+  }
 }
 
 @keyframes shine {
@@ -227,6 +271,7 @@ address {
 .link__text {
   -webkit-animation: rotateReverse normal infinite 20s linear;
   animation: rotateReverse normal infinite 20s linear;
+  -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
 }
 
@@ -241,11 +286,13 @@ address {
 
 @-webkit-keyframes rotateReverse {
   to {
+    -webkit-transform: rotate(-360deg);
     transform: rotate(-360deg);
   }
 }
 @keyframes rotateReverse {
   to {
+    -webkit-transform: rotate(-360deg);
     transform: rotate(-360deg);
   }
 }
@@ -254,8 +301,10 @@ address {
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   opacity: 0.5;
+  -webkit-transition: opacity 400ms ease-in-out;
   transition: opacity 400ms ease-in-out;
 }
 
@@ -275,13 +324,20 @@ address {
 }
 
 .about-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .about-me-wrap,
 .skills-wrap {
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -369,13 +425,24 @@ address {
 }
 
 .works-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 .works-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 860px;
   height: 290px;
@@ -443,7 +510,10 @@ address {
   -webkit-transform: scale3d(1, 2, 1);
   transform: scale3d(1, 2, 1);
   -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
   transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
   -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.9, 1);
   transition-timing-function: cubic-bezier(0.7, 0, 0.9, 1);
 }
@@ -465,13 +535,24 @@ address {
 }
 
 .contact-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 .contact-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -494,7 +575,11 @@ address {
   top: 0;
   left: 0;
   display: none;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 100%;
   height: 100vh;
@@ -504,6 +589,8 @@ address {
 }
 
 .active {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -526,12 +613,20 @@ address {
   font-size: 62px;
   -webkit-text-stroke: 1px #fff;
   -webkit-text-fill-color: transparent;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#fff),
+    to(#fff)
+  );
   background-image: linear-gradient(0deg, #fff, #fff);
   -webkit-background-clip: text;
   color: transparent;
   background-repeat: no-repeat;
   background-position: 0% 0%;
   background-size: 0 100%;
+  -webkit-transition: background-size 0.2s ease-in;
   transition: background-size 0.2s ease-in;
   text-align: center;
   cursor: pointer;
@@ -548,6 +643,19 @@ address {
   }
   .home-title {
     font-size: 76px;
+  }
+
+  @-webkit-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 630px;
+    }
+
+    100% {
+      background-position: 630px;
+    }
   }
 
   @keyframes shine {
@@ -570,7 +678,12 @@ address {
     height: auto;
   }
   .about-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
 
@@ -610,6 +723,19 @@ address {
   .home-title {
     font-size: 48px;
     padding: 12px 20px;
+  }
+
+  @-webkit-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 290px;
+    }
+
+    100% {
+      background-position: 290px;
+    }
   }
 
   @keyframes shine {
@@ -687,10 +813,15 @@ address {
   }
 
   .works-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     padding-left: 0;
     padding: 24px 20px;
     height: auto;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
   }
 
@@ -732,6 +863,19 @@ address {
 @media screen and (max-width: 339px) {
   .home-title {
     font-size: 40px;
+  }
+
+  @-webkit-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 250px;
+    }
+
+    100% {
+      background-position: 250px;
+    }
   }
 
   @keyframes shine {
