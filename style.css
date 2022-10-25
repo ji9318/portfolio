@@ -15,6 +15,10 @@ html {
   letter-spacing: 0.1rem;
 }
 
+body {
+  position: relative;
+}
+
 h1,
 h2,
 h3 {
@@ -78,19 +82,18 @@ address {
 .sm-only {
   display: none;
 }
-
-@font-face {
-  font-family: "newyork";
-  src: url(./assets/fonts/NewYork.otf);
+.lg-hidden {
+  display: none;
 }
 
 /* Home */
 .home {
+  position: relative;
   height: 100vh;
-  background-image: url(./assets/background.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  /* background-color: #211e49; */
+  /* background-image: url(./assets/background.jpg); */
+  /* background-repeat: no-repeat;
+  background-size: 100% 100%; */
+  background-color: #1f2029;
   color: #fff;
   padding: 0 70px 0 80px;
 }
@@ -117,7 +120,7 @@ address {
 }
 
 .navbar-dark {
-  background-color: rgba(39, 37, 79, 0.4);
+  background-color: rgba(31, 32, 41, 0.3);
   height: 80px;
 }
 
@@ -135,13 +138,17 @@ address {
 }
 
 .gnb-item {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 22px;
+  font-weight: 700;
   cursor: pointer;
 }
 
 .gnb-item:not(:last-child) {
   margin-right: 48px;
+}
+
+.gnb-item a.active {
+  color: #ffeba7;
 }
 
 .menu-button {
@@ -153,9 +160,10 @@ address {
 .menu-button-bar {
   position: absolute;
   display: block;
-  background-color: #fff;
+  background-color: #ffeba7;
   width: 30px;
-  height: 2px;
+  height: 3px;
+  border-radius: 1px;
   -webkit-transition: opacity 400ms ease-in, -webkit-transform 400ms ease-in;
   transition: opacity 400ms ease-in, -webkit-transform 400ms ease-in;
   transition: opacity 400ms ease-in, transform 400ms ease-in;
@@ -196,19 +204,20 @@ address {
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  font-family: "futura-pt";
+  font-family: "Montserrat", sans-serif;
   font-size: 92px;
+  font-weight: 900;
   letter-spacing: 0.2rem;
   padding: 12px 48px;
   background: -webkit-gradient(
     linear,
     left top,
     right top,
-    color-stop(0, #acaad8),
+    color-stop(0, #9398c0),
     color-stop(10%, #fff),
-    color-stop(20%, #acaad8)
+    color-stop(20%, #9398c0)
   );
-  background: linear-gradient(to right, #acaad8 0, #fff 10%, #acaad8 20%);
+  background: linear-gradient(to right, #9398c0 0, #fff 10%, #9398c0 20%);
   background-position: 0;
   background-clip: text;
   -webkit-background-clip: text;
@@ -227,11 +236,11 @@ address {
     background-position: 0;
   }
   60% {
-    background-position: 730px;
+    background-position: 870px;
   }
 
   100% {
-    background-position: 730px;
+    background-position: 870px;
   }
 }
 
@@ -240,11 +249,11 @@ address {
     background-position: 0;
   }
   60% {
-    background-position: 730px;
+    background-position: 870px;
   }
 
   100% {
-    background-position: 730px;
+    background-position: 870px;
   }
 }
 
@@ -255,8 +264,8 @@ address {
 }
 
 .link {
-  width: 9rem;
-  height: 9rem;
+  width: 10rem;
+  height: 10rem;
   display: inline-block;
   font-size: 1.55rem;
   letter-spacing: 0.3em;
@@ -319,8 +328,9 @@ address {
 }
 
 .section-title {
-  font-family: "futura-pt";
+  font-family: "Montserrat", sans-serif;
   font-size: 68px;
+  font-weight: 900;
   text-align: center;
   margin-bottom: 80px;
   -webkit-text-stroke: 1px #000;
@@ -331,11 +341,11 @@ address {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  justify-content: center;
 }
 
 .about-me-wrap,
 .skills-wrap {
-  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -346,13 +356,20 @@ address {
 }
 
 .about-me-wrap {
+  width: 550px;
   padding-left: 140px;
+  flex-shrink: 0;
+}
+
+.skills-wrap {
+  width: 560px;
 }
 
 .about-title h3 {
-  font-family: "futura-pt";
+  font-family: "Montserrat", sans-serif;
   font-size: 28px;
-  color: #27254f;
+  font-weight: 900;
+  color: #2a2b38;
   margin-bottom: 32px;
 }
 
@@ -363,16 +380,30 @@ address {
   background-color: #ddd;
   margin-bottom: 32px;
   overflow: hidden;
+  position: relative;
 }
 
 .profile-image img {
   width: 100%;
+  display: inline-block;
 }
 
 .profile {
   font-size: 18px;
   margin-bottom: 24px;
   transform: translateX(-10px);
+  position: relative;
+}
+
+.profile::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background-color: #ffedb1;
+  display: inline-block;
+  width: 342px;
+  height: 12px;
+  z-index: -1;
 }
 
 .introduce {
@@ -427,8 +458,7 @@ address {
 /* Works */
 .works {
   padding: 80px;
-  background-image: url(./assets/background.jpg);
-  background-size: 100% 100%;
+  background-color: #1f2029;
 }
 
 .works .section-title {
@@ -458,9 +488,10 @@ address {
   width: 960px;
   height: 360px;
   padding-left: 80px;
-  background-color: rgba(252, 252, 252, 0.8);
-  border-radius: 20px;
+  background-color: #2a2b38;
+  border-radius: 10px;
   transition: box-shadow 200ms ease-in, transform 200ms ease-in;
+  color: #c4c3ca;
 }
 
 .works-item:not(:last-child) {
@@ -468,8 +499,8 @@ address {
 }
 
 .works-item:hover {
-  transform: translate(-5px, -5px);
-  box-shadow: 3px 3px 10px 3px rgba(213, 217, 255, 0.5);
+  transform: translate(-3px, -3px);
+  box-shadow: 3px 3px 20px 3px rgba(213, 217, 255, 0.2);
 }
 
 .works-item-image {
@@ -489,6 +520,7 @@ address {
   margin-bottom: 12px;
   font-size: 26px;
   letter-spacing: -0.01em;
+  color: #fff;
 }
 
 .works-content {
@@ -508,10 +540,13 @@ address {
   display: inline-block;
   position: relative;
   padding: 10px 30px;
-  color: #fff;
-  background-color: #27254f;
-  border-radius: 10px;
+  color: #2a2b38;
+  font-weight: 700;
+  background-color: #ffeba7;
+  border-radius: 5px;
   overflow: hidden;
+  box-shadow: 0 8px 20px 0 rgba(255, 235, 167, 0.2);
+  transition: box-shadow 200ms ease-in;
 }
 
 .works-button span {
@@ -527,7 +562,7 @@ address {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #434b77;
+  background-color: #fff;
   -webkit-transform-origin: 100% 50%;
   transform-origin: 100% 50%;
   -webkit-transform: scale3d(1, 2, 1);
@@ -546,15 +581,20 @@ address {
   transform: scale3d(9, 9, 1);
 }
 
+.works-button:hover {
+  box-shadow: 0 8px 20px 0 rgba(255, 255, 255, 0.3);
+}
+
 /* Footer */
 .footer {
   padding: 80px;
-  color: #fff;
-  background-color: #27254f;
+  color: #1f2029;
+  font-weight: 700;
+  background-color: #ffeba7;
 }
 
 .footer .section-title {
-  -webkit-text-stroke: 1px #fff;
+  -webkit-text-stroke: 1px #1f2029;
 }
 
 .contact-list {
@@ -606,8 +646,7 @@ address {
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: #27254f;
-  /* background-color: #181c44; */
+  background-color: #1f2029;
   z-index: 200;
 }
 
@@ -631,8 +670,8 @@ address {
 }
 
 .side-navbar-item {
-  font-family: "futura-pt";
-  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
   font-size: 62px;
   -webkit-text-stroke: 1px #fff;
   -webkit-text-fill-color: transparent;
@@ -643,29 +682,34 @@ address {
     from(#fff),
     to(#fff)
   );
-  background-image: linear-gradient(0deg, #fff, #fff);
+  background-image: linear-gradient(0deg, #ffeba7, #ffeba7);
   -webkit-background-clip: text;
   color: transparent;
   background-repeat: no-repeat;
   background-position: 0% 0%;
   background-size: 0 100%;
   -webkit-transition: background-size 0.2s ease-in;
-  transition: background-size 0.2s ease-in;
+  transition: background-size 0.2s ease-in, -webkit-text-stroke 0.2s ease-in;
   text-align: center;
   cursor: pointer;
 }
 
 .side-navbar-item:hover {
   background-size: 100% 100%;
+  -webkit-text-stroke: 1px #ffeba7;
 }
 
 /* Tablet */
 @media screen and (max-width: 1023px) {
+  .lg-hidden {
+    display: block;
+  }
+
   .home {
     padding: 0 20px;
   }
   .home-title {
-    font-size: 76px;
+    font-size: 74px;
   }
 
   @-webkit-keyframes shine {
@@ -673,11 +717,11 @@ address {
       background-position: 0;
     }
     60% {
-      background-position: 630px;
+      background-position: 530px;
     }
 
     100% {
-      background-position: 630px;
+      background-position: 530px;
     }
   }
 
@@ -686,11 +730,11 @@ address {
       background-position: 0;
     }
     60% {
-      background-position: 630px;
+      background-position: 530px;
     }
 
     100% {
-      background-position: 630px;
+      background-position: 530px;
     }
   }
 
@@ -713,6 +757,7 @@ address {
   .about-me-wrap {
     padding-left: 0;
     margin-bottom: 54px;
+    flex-shrink: 1;
   }
 
   .works {
@@ -744,12 +789,17 @@ address {
   }
 }
 
+/* mobile */
+
 @media screen and (max-width: 767px) {
   .sm-only {
     display: block;
   }
+  .sm-hidden {
+    display: none;
+  }
   .home-title {
-    font-size: 48px;
+    font-size: 40px;
     padding: 12px 20px;
   }
 
@@ -828,6 +878,12 @@ address {
     width: 100%;
   }
 
+  .profile::before {
+    top: 14px;
+    width: 230px;
+    height: 12px;
+  }
+
   .skills-item span {
     font-size: 20px;
   }
@@ -894,9 +950,9 @@ address {
   }
 }
 
-@media screen and (max-width: 339px) {
+@media screen and (max-width: 359px) {
   .home-title {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   @-webkit-keyframes shine {
@@ -930,11 +986,24 @@ address {
     height: 7rem;
   }
 
+  .scroll-button {
+    bottom: 30px;
+    right: 30px;
+  }
+
+  .section-title {
+    font-size: 42px;
+  }
+
   .skills-item p {
     font-size: 14px;
   }
 
   .works-item-image {
     height: 140px;
+  }
+
+  .side-navbar-item {
+    font-size: 42px;
   }
 }

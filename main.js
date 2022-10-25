@@ -30,14 +30,21 @@ menuButton.addEventListener("click", () => {
 });
 
 // scrolling when tapping menu
-gnb.addEventListener("click", (event) => {
-  const target = event.target;
-  const link = target.dataset.link;
-  if (link == null) {
-    return;
-  }
-  scrollIntoView(link);
-});
+// let currentItem;
+// function clickHandler(event) {
+//   const target = event.target;
+//   const link = target.dataset.link;
+//   if (currentItem) {
+//     currentItem.classList.remove("gnb-active");
+//   }
+//   if (link == null) {
+//     return;
+//   }
+//   scrollIntoView(link);
+//   target.classList.toggle("gnb-active");
+//   currentItem = target;
+// }
+// gnb.addEventListener("click", clickHandler);
 
 const sideNavbarList = document.querySelector(".side-navbar-list");
 sideNavbarList.addEventListener("click", (event) => {
@@ -49,6 +56,9 @@ sideNavbarList.addEventListener("click", (event) => {
   sideNavbar.classList.remove("active");
   gnb.classList.remove("hide");
   body.classList.remove("prevent");
+  button1.classList.remove("rotate-pos");
+  button2.classList.remove("opacity");
+  button3.classList.remove("rotate-neg");
   scrollIntoView(link);
 });
 

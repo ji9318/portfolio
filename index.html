@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -24,18 +24,30 @@
     />
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#gnb-scroll"
+    data-bs-smooth-scroll="true"
+  >
     <header id="home" class="home">
       <nav class="navbar">
         <h1>
           <img src="./assets/logo.png" alt="" />
         </h1>
-        <div class="gnb-wrap">
-          <ul class="gnb">
-            <li class="gnb-item" data-link="#home">HOME</li>
-            <li class="gnb-item" data-link="#about">ABOUT</li>
-            <li class="gnb-item" data-link="#works">WORKS</li>
-            <li class="gnb-item" data-link="#contact">CONTACT</li>
+        <div class="gnb-wrap" id="gnb-scroll">
+          <ul class="gnb nav nav-tabs" role="tablist">
+            <li class="gnb-item" data-link="#home">
+              <a class="nav-link" href="#home">HOME</a>
+            </li>
+            <li class="gnb-item" data-link="#about">
+              <a class="nav-link" href="#about">ABOUT</a>
+            </li>
+            <li class="gnb-item" data-link="#works">
+              <a class="nav-link" href="#works">WORKS</a>
+            </li>
+            <li class="gnb-item" data-link="#contact">
+              <a class="nav-link" href="#contact">CONTACT</a>
+            </li>
           </ul>
           <button class="menu-button" aria-label="메뉴 열기 버튼">
             <span class="menu-button-bar"></span>
@@ -45,49 +57,50 @@
         </div>
       </nav>
       <h1 class="home-title">
-        Web <br class="sm-only" />Publisher<br />Portfolio
+        Web <br class="lg-hidden" />Publisher<br />Portfolio
       </h1>
+      <button
+        class="scroll-button link"
+        data-link="#about"
+        aria-label="페이지 스크롤 버튼"
+      >
+        <svg
+          viewBox="0 0 200 200"
+          width="200"
+          height="200"
+          xmlns="http://www.w3.org/2000/svg"
+          class="link__svg"
+          aria-labelledby="link1-title link1-desc"
+        >
+          <path
+            id="link-circle"
+            class="link__path"
+            d="M 20, 100 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"
+            stroke="none"
+            fill="none"
+          />
+          <text class="link__text">
+            <textPath href="#link-circle" stroke="none">
+              KIM JI YEON PORTFOLIO
+            </textPath>
+          </text>
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          fill="#fff"
+          class="bi bi-arrow-down"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+          />
+        </svg>
+      </button>
     </header>
-    <button
-      class="scroll-button link"
-      data-link="#about"
-      aria-label="페이지 스크롤 버튼"
-    >
-      <svg
-        viewBox="0 0 200 200"
-        width="200"
-        height="200"
-        xmlns="http://www.w3.org/2000/svg"
-        class="link__svg"
-        aria-labelledby="link1-title link1-desc"
-      >
-        <path
-          id="link-circle"
-          class="link__path"
-          d="M 20, 100 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"
-          stroke="none"
-          fill="none"
-        />
-        <text class="link__text">
-          <textPath href="#link-circle" stroke="none">
-            KIM JI YEON PORTFOLIO
-          </textPath>
-        </text>
-      </svg>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
-        fill="#fff"
-        class="bi bi-arrow-down"
-        viewBox="0 0 16 16"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-        />
-      </svg>
-    </button>
+
     <main>
       <section id="about" class="about">
         <h2 class="section-title">ABOUT</h2>
@@ -99,7 +112,10 @@
             <div class="profile-image">
               <img src="./assets/profile.jpg" alt="" />
             </div>
-            <p class="profile">"욕심"있는 웹퍼블리셔 지원자 김지연입니다</p>
+            <p class="profile">
+              "욕심"있는 신입 웹퍼블리셔<br class="sm-only" />
+              김지연입니다
+            </p>
             <ul class="career-list">
               <li class="career-item">
                 더조은컴퓨터아카데미 UI/UX 과정<br />
@@ -119,7 +135,9 @@
               <li class="skills-item">
                 <span><i class="bi bi-check2"></i>Design</span>
                 <p>
-                  photoshop, pigma를 사용하여 웹디자인에 필요한 툴을 자유롭게<br />
+                  photoshop, pigma를 사용하여 웹디자인에 필요한 툴을 자유롭게<br
+                    class="sm-hidden"
+                  />
                   사용 가능하며 시안 그대로 퍼블리싱이 가능합니다.
                 </p>
               </li>
@@ -134,7 +152,7 @@
                 <span><i class="bi bi-check2"></i>CSS</span>
                 <p>
                   시안 그대로 구현이 가능하며 디바이스 폭에 따라 반응형으로
-                  동작하는<br />
+                  동작하는<br class="sm-hidden" />
                   코드를 작성할 수 있습니다.
                 </p>
               </li>
@@ -246,5 +264,10 @@
       </ul>
     </aside>
     <script src="./main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
